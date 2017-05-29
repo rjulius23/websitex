@@ -62,9 +62,19 @@
 </head>
 <body>
 <div class="TopBar" style="margin-bottom: -17px; padding-bottom: 17px;">
-    <a class="normaltab" href="/s/all" role="tab" aria-selected="true"><span>FOR YOU</span></a>
-    <a class="normaltab" href="/s/homes" role="tab" aria-selected="false"><span>HOMES</span></a>
-    <a class="normaltab" href="/s/experiences" role="tab" aria-selected="false"><span>EXPERIENCES</span></a>
-    <a class="normaltab" href="/s/places" role="tab" aria-selected="false"><span>PLACES</span></a></div>
+    <a class="normaltab" href="#" role="tab" onmouseover="changeClass" id="nt"><span>FOR YOU</span></a>
+    <a class="normaltab" href="#" role="tab" onmouseover="changeClass" id="nt"><span>HOMES</span></a>
+    <a class="normaltab" href="#" role="tab" onmouseover="changeClass" id="nt"><span>EXPERIENCES</span></a>
+    <a class="normaltab" href="#" role="tab" onmouseover="changeClass" id="nt"><span>PLACES</span></a>
+
+    <script>
+
+    function changeClass() {
+         document.getElementById("nt").className = "selectedTab";
+    }
+
+    </script>
+
+</div>
 </body>
 </html>
