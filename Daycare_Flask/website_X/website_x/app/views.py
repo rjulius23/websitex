@@ -5,7 +5,7 @@ import sqlite3 as sql
 @app.route('/')
 @app.route('/index')
 def index():
-        return redirect(url_for("login"))
+        return render_template('index.html')
 
 @app.route('/login')
 def login():

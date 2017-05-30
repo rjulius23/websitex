@@ -1,45 +1,156 @@
 <!DOCTYPE html>
 <html>
 <body>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='w3.css') }}">
 <style>
-body, html {
+body, html{
     	height: 100%;
+    	margin: 0;
+    	padding: 0;
 	}
 
-  .text{
- 	font-weight:bold;
+div {
+    margin: 0;
+    padding: 0;
+}
+
+    .text{
+     	font-weight:bold;
         font-family:"Times New Roman";
         font-size:50px;
         color:rgb(0,0,255)
+        text-align: center;
  	}
-    
-  .text2{
+
+    .text:link {
+ 	    text-decoration: none;
+ 	}
+
+    .text2:link {
+ 	    text-decoration: none;
+ 	}
+
+    .text2{
   		font-family:"Lucida Console", "Courier New";
         font-size:50px;
         color:rgb(255,0,0)
+        text-align: center;
   	}
     
-  .center {
+    .center {
     	margin: auto;
     	width: 60%;
     	border: 3px solid #73AD21;
     	padding: 10px;
         	text-align: center;
+        height: 50%
 	}
-  .parallax {
- 	/* The image used */
-    	background-image: url("background.jpg");
+    .parallax {
+ 	    /* The image used */
+    	background-image: url("static/background.jpg");
 
     	/* Set a specific height 
     	min-height: 500px;*/
 
-	height: 50%; 
+    	height: 100%;
 
     	/* Create the parallax scrolling effect */
     	background-attachment: fixed;
     	background-position: center;
     	background-repeat: no-repeat;
     	background-size: cover;
+    	text-align: center;
+    	vertical-align: middle;
+    }
+
+.parallax-content {
+  width: 100%;
+  margin: 0 auto;
+  vertical-align: middle;
+  text-align: center;
+  display: table-cell;
+}
+
+    .parallax1 {
+ 	    /* The image used */
+    	background-image: url("static/background.jpg");
+
+    	/* Set a specific height
+    	min-height: 500px;*/
+
+    	height: 100%;
+
+    	/* Create the parallax scrolling effect */
+    	background-attachment: fixed;
+    	background-position: 50% 50%;
+    	background-repeat: no-repeat;
+    	background-size: cover;
+    	text-align: center;
+    	align-items: center;
+    	justify-content: center;
+    	display: flex;
+    }
+
+.button {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    background-color: #538fbe;
+    padding: 20px 70px;
+    font-size: 24px;
+    border: 1px solid #2d6898;
+    background-image: linear-gradient(bottom, rgb(73,132,180) 0%, rgb(97,155,203) 100%);
+    background-image: -o-linear-gradient(bottom, rgb(73,132,180) 0%, rgb(97,155,203) 100%);
+    background-image: -moz-linear-gradient(bottom, rgb(73,132,180) 0%, rgb(97,155,203) 100%);
+    background-image: -webkit-linear-gradient(bottom, rgb(73,132,180) 0%, rgb(97,155,203) 100%);
+    background-image: -ms-linear-gradient(bottom, rgb(73,132,180) 0%, rgb(97,155,203) 100%);
+
+    background-image: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0, rgb(73,132,180)),
+        color-stop(1, rgb(97,155,203))
+    );
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    text-shadow: 0px -1px 0px rgba(0,0,0,.5);
+    -webkit-box-shadow: 0px 6px 0px #2b638f, 0px 3px 15px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
+    -moz-box-shadow: 0px 6px 0px #2b638f, 0px 3px 15px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
+    box-shadow: 0px 6px 0px #2b638f, 0px 3px 15px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
+}
+
+.button:hover {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    background-color: rgb(0,55,200);
+    padding: 20px 70px;
+    font-size: 18px;
+    border: 1px solid #2d6898;
+    background-image: linear-gradient(bottom, rgb(73,132,180) 0%, rgb(97,155,203) 100%);
+    background-image: -o-linear-gradient(bottom, rgb(73,132,180) 0%, rgb(97,155,203) 100%);
+    background-image: -moz-linear-gradient(bottom, rgb(73,132,180) 0%, rgb(97,155,203) 100%);
+    background-image: -webkit-linear-gradient(bottom, rgb(73,132,180) 0%, rgb(97,155,203) 100%);
+    background-image: -ms-linear-gradient(bottom, rgb(73,132,180) 0%, rgb(97,155,203) 100%);
+
+    background-image: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0, rgb(73,132,180)),
+        color-stop(1, rgb(97,155,203))
+    );
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    text-shadow: 0px -1px 0px rgba(0,0,0,.5);
+    -webkit-box-shadow: 0px 6px 0px #2b638f, 0px 3px 15px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
+    -moz-box-shadow: 0px 6px 0px #2b638f, 0px 3px 15px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
+    box-shadow: 0px 6px 0px #2b638f, 0px 3px 15px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
 }
 </style>
 
@@ -48,7 +159,13 @@ body, html {
  <a class="text2" onmouseover="changeStyle()" onmouseout="changeStyleBack()" id="test2">Alma</a>
 </div>
 -->
-<div class="parallax"></div>
+<div class="parallax1">
+
+    <div class="parallax-content">
+        <button onclick="goToUrl('/login')" class="button">Login</button>
+    </div>
+
+</div>
 
 <div class="center" id="test">
  <a class="text2" id="test2">Alma</a>
@@ -59,6 +176,13 @@ body, html {
 <script>
 document.getElementById("test2").onmouseover = function() {changeStyle()};
 document.getElementById("test2").onmouseout = function() {changeStyleBack()};
+
+document.getElementById("link1").onmouseover = function() {changeStyle()};
+document.getElementById("link1").onmouseout = function() {changeStyleBack()};
+
+function goToUrl(url){
+    location.href = url;
+}
 
 function log(msg) {
     setTimeout(function() {
