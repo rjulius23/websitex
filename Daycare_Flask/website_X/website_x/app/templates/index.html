@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<body>
+<style>
+body, html {
+    	height: 100%;
+	}
+
+  .text{
+ 	font-weight:bold;
+        font-family:"Times New Roman";
+        font-size:50px;
+        color:rgb(0,0,255)
+ 	}
+    
+  .text2{
+  		font-family:"Lucida Console", "Courier New";
+        font-size:50px;
+        color:rgb(255,0,0)
+  	}
+    
+  .center {
+    	margin: auto;
+    	width: 60%;
+    	border: 3px solid #73AD21;
+    	padding: 10px;
+        	text-align: center;
+	}
+  .parallax {
+ 	/* The image used */
+    	background-image: url("background.jpg");
+
+    	/* Set a specific height 
+    	min-height: 500px;*/
+
+	height: 50%; 
+
+    	/* Create the parallax scrolling effect */
+    	background-attachment: fixed;
+    	background-position: center;
+    	background-repeat: no-repeat;
+    	background-size: cover;
+}
+</style>
+
+<!-- MOUSE OVER IN HTML
+<div class="center" onmouseover="changeStyle()" id="test">
+ <a class="text2" onmouseover="changeStyle()" onmouseout="changeStyleBack()" id="test2">Alma</a>
+</div>
+-->
+<div class="parallax"></div>
+
+<div class="center" id="test">
+ <a class="text2" id="test2">Alma</a>
+</div>
+
+<div class="parallax"></div>
+
+<script>
+document.getElementById("test2").onmouseover = function() {changeStyle()};
+document.getElementById("test2").onmouseout = function() {changeStyleBack()};
+
+function log(msg) {
+    setTimeout(function() {
+        throw new Error(msg);
+    }, 0);
+}
+function changeStyle(){
+	document.getElementById("test2").className = "text";
+}
+function changeStyleBack(){
+	document.getElementById("test2").className = "text2";
+}
+</script>
+
+</body>
+</html> 
