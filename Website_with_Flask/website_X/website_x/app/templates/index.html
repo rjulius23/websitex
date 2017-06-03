@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <body>
+{% extends "layout.html" %}
+{% block body %}
 <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='w3.css') }}">
 <style>
 body, html{
@@ -13,12 +15,11 @@ div {
     margin: 0;
     padding: 0;
 }
-
     .text{
      	font-weight:bold;
         font-family:"Times New Roman";
         font-size:50px;
-        color:rgb(0,0,255)
+        color:rgb(0,0,0);
         text-align: center;
  	}
 
@@ -33,7 +34,7 @@ div {
     .text2{
   		font-family:"Lucida Console", "Courier New";
         font-size:50px;
-        color:rgb(255,0,0)
+        color:rgb(255,255,255);
         text-align: center;
   	}
     
@@ -168,10 +169,13 @@ div {
 <div class="parallax1">
 
     <div class="parallax-content">
-        <span onclick="openForm()" class="w3-closebtn w3-hover-red w3-container w3-padding-8 w3-display-topright" title="Login">LOGIN</span>
+        {% if logged_in %}
+        `<span onclick="goToUrl('index')" class="text2 w3-hover-red w3-container w3-padding-8 w3-display-topright" title="Logout">LOG OUT ({{ user }})</span>
+        {% else %}
+         <span onclick="openForm()" class="text2 w3-hover-red w3-container w3-padding-8 w3-display-topright" title="Login">LOGIN</span>
+        {% endif %}
         <div id="login_form" class="w3-modal">
             <div class="w3-modal-content w3-card-8 w3-animate-zoom" style="max-width:600px">
-
                 <div class="w3-center"><br>
                     <span onclick="document.getElementById('login_form').style.display='none'" class="w3-closebtn w3-hover-red w3-container w3-padding-8 w3-display-topright" title="Cancel">X</span>
                     <img src="{{ url_for('static',filename='logo_placeholder.gif') }}" alt="Avatar" style="width:30%" class="w3-circle w3-margin-top">
@@ -237,4 +241,5 @@ function changeStyleBack(){
 </script>
 
 </body>
+{% endblock %}
 </html> 

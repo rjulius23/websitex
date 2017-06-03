@@ -1,11 +1,17 @@
-from flask import redirect, url_for, request, render_template
+from flask import redirect, url_for, request, render_template, flash
 from app import app
 import sqlite3 as sql
 
 @app.route('/')
 @app.route('/index')
 def index():
-        return render_template('index.html')
+        if request.args:
+            logged_in = request.args['logged_in']
+            user = request.args['user']
+            if logged_in:
+                return render_template('index.html', user=user, logged_in=True)
+        else:
+            return render_template('index.html')
 
 @app.route('/login')
 def login():
@@ -28,10 +34,12 @@ def success():
             res = cur.fetchall()
             print (res)
         if len(res) == 0:
-            return redirect(url_for('register'))
+            #flash('Login failed!')
+            return redirect(url_for('index'))
         else:
-            return "Successful login[%s] for user:%s with password:%s" % (typeUser,user,passwd)
+            return redirect(url_for('index', user=user, logged_in=True))
     else:
+        flash('Login failed!')
         return "LOGIN FAILED!!"
 
 
